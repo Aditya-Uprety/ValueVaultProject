@@ -11,9 +11,9 @@
     <nav class="navbar">
         <div class="nav-left">
             <a href="${pageContext.request.contextPath}/home" style="text-decoration:none;">
-    			<img src="${pageContext.request.contextPath}/images/logo.png" 
-         			alt="ValueVault" style="height:48px; width:auto;">
-			</a>
+                <img src="${pageContext.request.contextPath}/images/logo.png"
+                     alt="ValueVault" style="height:48px; width:auto;">
+            </a>
         </div>
         <div class="nav-right">
             <a href="${pageContext.request.contextPath}/admin-dashboard">Dashboard</a>
@@ -28,7 +28,10 @@
     <div class="upload-container">
         <div class="upload-card">
             <div class="upload-left">
-                <div style="font-size:64px;margin-bottom:20px;opacity:.6;">🛡</div>
+                <%-- Logo image replaces old shield emoji --%>
+                <img src="${pageContext.request.contextPath}/images/logo.png"
+                     alt="ValueVault"
+                     style="height:80px;width:auto;margin-bottom:20px;opacity:0.75;">
                 <h2>New Listing</h2>
                 <p>Add a new high-value asset to the vault. Ensure all details are accurate for prospective bidders.</p>
             </div>
@@ -63,11 +66,14 @@
 
                     <div class="form-group">
                         <label>Item Image (optional)</label>
-                        <div class="upload-area">
+                        <div class="upload-area" onclick="document.getElementById('imageInput').click();">
                             <span class="upload-icon">☁</span>
                             <p>Click to select or drag and drop</p>
                             <p class="small-text">PNG, JPG, GIF up to 10MB</p>
-                            <input type="file" name="image" accept="image/*" style="margin-top:10px;">
+                            <input type="file" id="imageInput" name="image" accept="image/*"
+                                   style="display:none;"
+                                   onchange="document.getElementById('fileName').textContent = this.files[0]?.name || '';">
+                            <p id="fileName" style="margin-top:8px;color:var(--gold);font-size:13px;"></p>
                         </div>
                     </div>
 

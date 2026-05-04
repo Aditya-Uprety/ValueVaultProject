@@ -18,9 +18,9 @@
     <nav class="navbar">
         <div class="nav-left">
            <a href="${pageContext.request.contextPath}/home" style="text-decoration:none;">
-    			<img src="${pageContext.request.contextPath}/images/logo.png" 
-        			 alt="ValueVault" style="height:48px; width:auto;">
-			</a>
+                <img src="${pageContext.request.contextPath}/images/logo.png"
+                     alt="ValueVault" style="height:48px; width:auto;">
+           </a>
         </div>
         <div class="nav-right">
             <% if (loggedUser != null && isAdmin) { %>
@@ -46,8 +46,13 @@
         </div>
     </nav>
 
+    <%-- Hero banner: logo image replaces the old shield emoji --%>
     <div class="hero">
-        <div class="hero-logo-icon">🛡</div>
+        <div class="hero-logo-icon">
+            <img src="${pageContext.request.contextPath}/images/logo.png"
+                 alt="ValueVault"
+                 style="height:110px;width:auto;opacity:0.85;">
+        </div>
         <h1>ValueVault</h1>
         <p>Premium Asset Auctions</p>
     </div>

@@ -11,9 +11,9 @@
     <nav class="navbar">
         <div class="nav-left">
             <a href="${pageContext.request.contextPath}/home" style="text-decoration:none;">
-    			<img src="${pageContext.request.contextPath}/images/logo.png" 
-         			alt="ValueVault" style="height:48px; width:auto;">
-			</a>
+                <img src="${pageContext.request.contextPath}/images/logo.png"
+                     alt="ValueVault" style="height:48px; width:auto;">
+            </a>
         </div>
         <div class="nav-right">
             <a href="${pageContext.request.contextPath}/home">Home</a>
@@ -32,6 +32,9 @@
             <% if (request.getParameter("registered") != null) { %>
                 <div class="success-msg">Account created successfully! Please log in.</div>
             <% } %>
+            <% if (request.getParameter("reset") != null) { %>
+                <div class="success-msg">Password reset successfully! Please log in with your new password.</div>
+            <% } %>
             <% if (request.getAttribute("error") != null) { %>
                 <div class="error-msg"><%= request.getAttribute("error") %></div>
             <% } %>
@@ -45,6 +48,12 @@
                     <label>Password</label>
                     <input type="password" name="password" placeholder="••••••••" required>
                 </div>
+
+                <div class="form-options" style="margin-bottom:16px;">
+                    <span></span>
+                    <a href="${pageContext.request.contextPath}/forgot-password" class="forgot-password">Forgot Password?</a>
+                </div>
+
                 <button type="submit" class="btn-primary">Login →</button>
             </form>
             <p class="footer-text">Don't have an account? <a href="${pageContext.request.contextPath}/register">Join ValueVault</a></p>
