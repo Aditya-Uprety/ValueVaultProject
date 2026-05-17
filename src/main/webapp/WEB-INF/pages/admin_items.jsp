@@ -103,7 +103,7 @@
     <!-- Delete Item Confirmation Modal -->
     <div class="modal-overlay" id="deleteItemModal">
         <div class="modal-box">
-            <div class="modal-icon">🗑️</div>
+            <div class="modal-icon" style="font-size:32px;color:var(--red);font-weight:300;">&#x2715;</div>
             <h3>Remove Item</h3>
             <p>Are you sure you want to permanently remove <strong id="modalItemName"></strong> from the vault?<br>
                All pending bids on this item will also be deleted. This cannot be undone.</p>
@@ -127,7 +127,7 @@
                 <p>Manage auction assets and view current statuses.</p>
             </div>
             <a href="${pageContext.request.contextPath}/upload" class="btn-primary"
-               style="width:auto;padding:10px 20px;">+ Add New Item</a>
+               style="width:auto;padding:10px 20px;">Add New Item</a>
         </div>
 
         <% if ("sold".equals(request.getParameter("error"))) { %>
@@ -178,7 +178,7 @@
                                     <% if (!"ended".equals(st)) { %>
                                         <button class="btn-delete"
                                                 onclick="openDeleteModal(<%= item.get("id") %>, '<%= ((String)item.get("title")).replace("'", "\\'") %>')">
-                                            🗑 Remove
+                                            Remove
                                         </button>
                                     <% } else { %>
                                         <span style="font-size:12px;color:var(--text-muted);">Sold — cannot remove</span>

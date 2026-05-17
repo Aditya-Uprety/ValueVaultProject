@@ -15,7 +15,6 @@ public class ContactServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         // Handle contact form submission (e.g., save to DB or send email)
-        // For now, just redirect back with success
         response.sendRedirect("contact?sent=true");
     }
 }

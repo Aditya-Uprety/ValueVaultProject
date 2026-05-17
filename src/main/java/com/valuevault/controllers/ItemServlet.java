@@ -116,7 +116,7 @@ public class ItemServlet extends HttpServlet {
 
             try (Connection conn = DBConfig.getConnection()) {
 
-                // BUG FIX 3: Check if this user already has a pending bid on this item
+                // Check if this user already has a pending bid on this item
                 // If yes — UPDATE it instead of inserting a duplicate
                 String checkExistingSql =
                     "SELECT id FROM bids WHERE user_id = ? AND item_id = ? AND status = 'pending'";

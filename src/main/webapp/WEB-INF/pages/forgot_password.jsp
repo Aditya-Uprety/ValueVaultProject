@@ -33,7 +33,9 @@
 
             <%-- ── Step 1: Enter Email ── --%>
             <% if ("email".equals(step)) { %>
-                <div class="login-icon">🔑</div>
+                <div class="login-icon">
+                    <img src="${pageContext.request.contextPath}/images/logo.png" alt="ValueVault" style="height:64px;width:auto;">
+                </div>
                 <h1>Forgot Password</h1>
                 <p class="subtitle">Enter your registered email address and we'll ask you a security question.</p>
 
@@ -47,15 +49,17 @@
                         <label>Email Address</label>
                         <input type="email" name="email" placeholder="name@example.com" required autofocus>
                     </div>
-                    <button type="submit" class="btn-primary">Continue →</button>
+                    <button type="submit" class="btn-primary">Continue</button>
                 </form>
                 <p class="footer-text" style="margin-top:16px;">
-                    <a href="${pageContext.request.contextPath}/login" style="color:var(--gold);">← Back to Login</a>
+                    <a href="${pageContext.request.contextPath}/login" style="color:var(--gold);">Back to Login</a>
                 </p>
 
             <%-- ── Step 2: Answer Security Question ── --%>
             <% } else if ("question".equals(step)) { %>
-                <div class="login-icon">🛡️</div>
+                <div class="login-icon">
+                    <img src="${pageContext.request.contextPath}/images/logo.png" alt="ValueVault" style="height:64px;width:auto;">
+                </div>
                 <h1>Security Check</h1>
                 <p class="subtitle">Please answer your security question to verify your identity.</p>
 
@@ -74,15 +78,17 @@
                         <label>Your Answer</label>
                         <input type="text" name="securityAnswer" placeholder="Type your answer here" required autofocus>
                     </div>
-                    <button type="submit" class="btn-primary">Verify →</button>
+                    <button type="submit" class="btn-primary">Verify</button>
                 </form>
                 <p class="footer-text" style="margin-top:16px;">
-                    <a href="${pageContext.request.contextPath}/forgot-password" style="color:var(--gold);">← Try a different email</a>
+                    <a href="${pageContext.request.contextPath}/forgot-password" style="color:var(--gold);">Try a different email</a>
                 </p>
 
             <%-- ── Step 3: Set New Password ── --%>
             <% } else if ("reset".equals(step)) { %>
-                <div class="login-icon">✅</div>
+                <div class="login-icon">
+                    <img src="${pageContext.request.contextPath}/images/logo.png" alt="ValueVault" style="height:64px;width:auto;">
+                </div>
                 <h1>Set New Password</h1>
                 <p class="subtitle">Identity verified. Please choose a new password for your account.</p>
 
@@ -100,7 +106,7 @@
                         <label>Confirm New Password</label>
                         <input type="password" name="confirmPassword" placeholder="Repeat your new password" required>
                     </div>
-                    <button type="submit" class="btn-primary">Reset Password →</button>
+                    <button type="submit" class="btn-primary">Reset Password</button>
                 </form>
             <% } %>
 

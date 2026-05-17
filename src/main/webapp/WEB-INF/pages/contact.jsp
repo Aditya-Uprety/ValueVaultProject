@@ -53,7 +53,7 @@
 
             <% if ("true".equals(request.getParameter("sent"))) { %>
                 <div class="success-msg">
-                    ✅ Your message has been sent successfully!<br>
+                    Your message has been sent successfully.<br>
                     <span style="font-size:13px;">We've received your enquiry and will respond to your email address within 1–2 business days. Please check your inbox (and spam folder) for our reply.</span>
                 </div>
             <% } %>
@@ -85,7 +85,7 @@
                     <label>Message</label>
                     <textarea name="message" rows="6" placeholder="How can we assist you? Please be as detailed as possible." required></textarea>
                 </div>
-                <button type="submit" class="btn-primary">➤ Send Message</button>
+                <button type="submit" class="btn-primary">Send Message</button>
                 <p style="color:var(--text-muted);font-size:12px;margin-top:10px;text-align:center;">
                     After submitting, you will see a confirmation on this page. We'll reply to the email address you provided above.
                 </p>
@@ -96,7 +96,7 @@
             <h2>Get in Touch</h2>
 
             <p>
-                <strong>📍 Our Office</strong><br>
+                <strong>Our Office</strong><br>
                 ValueVault HQ<br>
                 Lazimpat Road, Lazimpat<br>
                 Kathmandu, Bagmati Province<br>
@@ -104,24 +104,24 @@
             </p>
 
             <p>
-                <strong>📧 Email</strong><br>
+                <strong>Email</strong><br>
                 inquiries@valuevault.com
             </p>
 
             <p>
-                <strong>📞 Phone</strong><br>
+                <strong>Phone</strong><br>
                 +977 01-4XXXXXX
             </p>
 
             <p>
-                <strong>🕐 Office Hours</strong><br>
+                <strong>Office Hours</strong><br>
                 Sunday – Friday: 10:00 AM – 6:00 PM NPT<br>
                 Saturday: Closed
             </p>
 
             <div style="border-top:1px solid var(--border);padding-top:20px;margin-top:8px;">
                 <p style="color:var(--text-muted);font-size:13px;line-height:1.7;">
-                    💬 <strong style="color:var(--text-white);">What happens after you send a message?</strong><br>
+                    <strong style="color:var(--text-white);">What happens after you send a message?</strong><br>
                     Once you submit the form, our support team is notified of your enquiry. You will see a confirmation message on this page immediately. A member of our team will then review your message and reply directly to the email address you provided, typically within 1–2 business days. For urgent auction-related matters, please mention it clearly in your message.
                 </p>
             </div>

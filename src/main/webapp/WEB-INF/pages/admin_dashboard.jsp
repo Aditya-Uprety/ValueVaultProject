@@ -38,21 +38,21 @@
             <div class="stat-card">
                 <div class="stat-header">
                     <span>Active Listings</span>
-                    <span class="stat-icon">📦</span>
+                    <span class="stat-icon" style="font-size:13px;font-weight:700;color:var(--gold-dim);letter-spacing:.5px;">ITM</span>
                 </div>
                 <div class="stat-value"><%= request.getAttribute("activeListings") %></div>
             </div>
             <div class="stat-card">
                 <div class="stat-header">
                     <span>Pending Bids</span>
-                    <span class="stat-icon">⚡</span>
+                    <span class="stat-icon" style="font-size:13px;font-weight:700;color:var(--gold-dim);letter-spacing:.5px;">BID</span>
                 </div>
                 <div class="stat-value"><%= request.getAttribute("pendingBids") %></div>
             </div>
             <div class="stat-card">
                 <div class="stat-header">
                     <span>Total Revenue (Accepted)</span>
-                    <span class="stat-icon">🏛</span>
+                    <span class="stat-icon" style="font-size:13px;font-weight:700;color:var(--gold-dim);letter-spacing:.5px;">NPR</span>
                 </div>
                 <div class="stat-value" style="font-size:22px;">
                     Rs <%= String.format("%,.0f", (Double) request.getAttribute("totalRevenue")) %>
@@ -108,15 +108,15 @@
 
             <div class="actions-card">
                 <h3>Quick Actions</h3>
-                <a href="${pageContext.request.contextPath}/upload" class="btn-primary full-width">⊕ Add New Item</a>
+                <a href="${pageContext.request.contextPath}/upload" class="btn-primary full-width">+ Add New Item</a>
                 <a href="${pageContext.request.contextPath}/bids"
                    class="pending-approval" style="text-decoration:none;margin-top:12px;display:flex;">
-                    <span>📋 Pending Bids</span>
+                    <span>Pending Bids</span>
                     <span class="badge"><%= request.getAttribute("pendingBids") %></span>
                 </a>
                 <a href="${pageContext.request.contextPath}/users"
                    class="pending-approval" style="text-decoration:none;margin-top:8px;display:flex;">
-                    <span>👥 Manage Users</span>
+                    <span>Manage Users</span>
                 </a>
             </div>
         </div>

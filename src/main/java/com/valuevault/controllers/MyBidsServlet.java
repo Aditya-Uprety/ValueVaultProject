@@ -46,7 +46,7 @@ public class MyBidsServlet extends HttpServlet {
                 bid.put("current_high_bid", rs.getDouble("current_high_bid"));
                 bid.put("image_url",        rs.getString("image_url"));
                 bid.put("item_id",          rs.getInt("item_id"));
-                // BUG FIX 1: Pass item_status so JSP can decide whether to show cancel button
+                // Pass item_status so JSP can decide whether to show cancel button
                 bid.put("item_status",      rs.getString("item_status"));
 
                 String dbStatus    = rs.getString("status");

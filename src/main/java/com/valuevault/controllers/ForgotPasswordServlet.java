@@ -32,7 +32,7 @@ public class ForgotPasswordServlet extends HttpServlet {
         UserDAO userDAO = new UserDAO();
         HttpSession session = request.getSession();
 
-        // ── Step 1: user submitted email ──────────────────────────────────────
+        // user submitted email 
         if ("lookup".equals(action)) {
             String email = request.getParameter("email");
             if (email == null || email.trim().isEmpty()) {
@@ -57,7 +57,7 @@ public class ForgotPasswordServlet extends HttpServlet {
             return;
         }
 
-        // ── Step 2: user submitted security answer ────────────────────────────
+        // user submitted security answer 
         if ("verify".equals(action)) {
             String email = (String) session.getAttribute("fp_email");
             if (email == null) {
@@ -85,14 +85,14 @@ public class ForgotPasswordServlet extends HttpServlet {
                 return;
             }
 
-            // Mark as verified so step 3 is accessible
+            // Mark as verified 
             session.setAttribute("fp_verified", true);
             request.setAttribute("step", "reset");
             request.getRequestDispatcher("/WEB-INF/pages/forgot_password.jsp").forward(request, response);
             return;
         }
 
-        // ── Step 3: user submitted new password ───────────────────────────────
+        // user submitted new password 
         if ("reset".equals(action)) {
             String email    = (String) session.getAttribute("fp_email");
             Boolean verified = (Boolean) session.getAttribute("fp_verified");

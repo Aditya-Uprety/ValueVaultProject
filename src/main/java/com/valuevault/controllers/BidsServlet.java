@@ -96,7 +96,7 @@ public class BidsServlet extends HttpServlet {
 
             if ("accept".equals(action)) {
 
-                // BUG FIX 5: Only accept if this bid is still pending (prevents double-click re-processing)
+                // Only accept if this bid is still pending (prevents double-click re-processing)
                 PreparedStatement psCheck = conn.prepareStatement(
                     "SELECT b.item_id FROM bids b WHERE b.id = ? AND b.status = 'pending'");
                 psCheck.setInt(1, Integer.parseInt(bidId));
@@ -110,7 +110,7 @@ public class BidsServlet extends HttpServlet {
 
                 int itemId = rsCheck.getInt("item_id");
 
-                // BUG FIX 2: Check if this item already has an accepted bid — block a second acceptance
+                // Check if this item already has an accepted bid — block a second acceptance
                 PreparedStatement psAlreadySold = conn.prepareStatement(
                     "SELECT COUNT(*) FROM bids WHERE item_id = ? AND status = 'accepted'");
                 psAlreadySold.setInt(1, itemId);
@@ -121,20 +121,20 @@ public class BidsServlet extends HttpServlet {
                     return;
                 }
 
-                // 1. Accept this bid
+                // Accept this bid
                 PreparedStatement psAccept = conn.prepareStatement(
                     "UPDATE bids SET status = 'accepted' WHERE id = ?");
                 psAccept.setInt(1, Integer.parseInt(bidId));
                 psAccept.executeUpdate();
 
-                // 2. Reject ALL other bids for the same item (pending or otherwise non-accepted)
+                // Reject ALL other bids for the same item (pending or otherwise non-accepted)
                 PreparedStatement psReject = conn.prepareStatement(
                     "UPDATE bids SET status = 'rejected' WHERE item_id = ? AND id != ? AND status = 'pending'");
                 psReject.setInt(1, itemId);
                 psReject.setInt(2, Integer.parseInt(bidId));
                 psReject.executeUpdate();
 
-                // 3. Mark the item as ended — removes it from shop
+                // Mark the item as ended — removes it from shop
                 ItemDAO itemDAO = new ItemDAO();
                 itemDAO.endItem(itemId);
 

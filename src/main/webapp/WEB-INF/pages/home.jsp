@@ -46,7 +46,7 @@
         </div>
     </nav>
 
-    <%-- Hero banner: logo image replaces the old shield emoji --%>
+    <%-- logo image  --%>
     <div class="hero">
         <div class="hero-logo-icon">
             <img src="${pageContext.request.contextPath}/images/logo.png"
@@ -69,7 +69,7 @@
                         <img src="${pageContext.request.contextPath}/images/<%= item.getImageUrl() %>"
                              alt="<%= item.getTitle() %>">
                     <% } else { %>
-                        <div class="placeholder-img">💎</div>
+                        <div class="placeholder-img" style="font-size:13px;font-weight:700;color:var(--gold-dim);letter-spacing:2px;opacity:.5;">VV</div>
                     <% } %>
                 </div>
                 <div class="item-details">

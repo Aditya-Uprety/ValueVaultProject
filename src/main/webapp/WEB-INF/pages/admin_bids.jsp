@@ -72,7 +72,7 @@
                             <td><strong><%= bid.get("user_name") %></strong></td>
                             <td>
                                 <% if ("Verified Buyer".equals(userStatus)) { %>
-                                    <span class="status verified">✓ Verified</span>
+                                    <span class="status verified">Verified</span>
                                 <% } else { %>
                                     <span class="status standard">Standard</span>
                                 <% } %>
@@ -88,22 +88,22 @@
                                               onsubmit="return confirm('Accept this bid? All other bids for this item will be rejected and the auction will close.');">
                                             <input type="hidden" name="bidId" value="<%= bid.get("id") %>">
                                             <input type="hidden" name="action" value="accept">
-                                            <button type="submit" class="btn-primary small">✓ Accept</button>
+                                            <button type="submit" class="btn-primary small">Accept</button>
                                         </form>
                                         <form action="${pageContext.request.contextPath}/bids" method="post"
                                               style="display:inline;"
                                               onsubmit="return confirm('Reject this bid?');">
                                             <input type="hidden" name="bidId" value="<%= bid.get("id") %>">
                                             <input type="hidden" name="action" value="reject">
-                                            <button type="submit" class="btn-reject">✗ Reject</button>
+                                            <button type="submit" class="btn-reject">Reject</button>
                                         </form>
                                     <% } else if ("pending".equals(status) && itemAlreadySold) { %>
                                         <%-- Item sold but this bid is still pending — auto-label as rejected --%>
-                                        <span class="status rejected">✗ Item Sold</span>
+                                        <span class="status rejected">Item Sold</span>
                                     <% } else if ("accepted".equals(status)) { %>
-                                        <span class="status accepted">✓ Accepted</span>
+                                        <span class="status accepted">Accepted</span>
                                     <% } else { %>
-                                        <span class="status rejected">✗ Rejected</span>
+                                        <span class="status rejected">Rejected</span>
                                     <% } %>
                                 </div>
                             </td>

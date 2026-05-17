@@ -67,7 +67,7 @@
                     <div class="form-group">
                         <label>Item Image (optional)</label>
                         <div class="upload-area" onclick="document.getElementById('imageInput').click();">
-                            <span class="upload-icon">☁</span>
+                            <span class="upload-icon" style="font-size:22px;color:var(--gold-dim);">&#x2191;</span>
                             <p>Click to select or drag and drop</p>
                             <p class="small-text">PNG, JPG, GIF up to 10MB</p>
                             <input type="file" id="imageInput" name="image" accept="image/*"
@@ -79,7 +79,7 @@
 
                     <div class="upload-actions">
                         <a href="${pageContext.request.contextPath}/items" class="btn-cancel">Cancel</a>
-                        <button type="submit" class="btn-primary">⊕ Submit to Vault</button>
+                        <button type="submit" class="btn-primary">Submit to Vault</button>
                     </div>
                 </form>
             </div>

@@ -25,7 +25,9 @@
 
     <div class="login-container">
         <div class="login-card" style="width:460px;">
-            <div class="login-icon">📋</div>
+            <div class="login-icon">
+    			<img src="${pageContext.request.contextPath}/images/logo.png" alt="ValueVault" style="height:64px;width:auto;">
+			</div>
             <h1>Join ValueVault</h1>
             <p class="subtitle">Create an account to participate in high-end auctions.</p>
 
@@ -58,7 +60,9 @@
                     </p>
                     <div class="form-group">
                         <label>Security Question</label>
-                        <select name="securityQuestion" required>
+                        <select name="securityQuestion" required
+        					oninvalid="this.setCustomValidity('Please select a security question.')"
+        					oninput="this.setCustomValidity('')">
                             <option value="" disabled selected>— Select a question —</option>
                             <option value="What is the name of your first pet?">What is the name of your first pet?</option>
                             <option value="What is your mother's maiden name?">What is your mother's maiden name?</option>
@@ -78,7 +82,7 @@
                     </div>
                 </div>
 
-                <button type="submit" class="btn-primary">Register →</button>
+                <button type="submit" class="btn-primary">Register</button>
             </form>
             <p class="footer-text">Already have an account? <a href="${pageContext.request.contextPath}/login">Login</a></p>
         </div>

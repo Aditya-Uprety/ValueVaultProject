@@ -33,7 +33,7 @@ public class CancelBidServlet extends HttpServlet {
 
             try (Connection conn = DBConfig.getConnection()) {
 
-                // BUG FIX 1: Only allow cancellation if bid belongs to user AND is still 'pending'
+                // Only allow cancellation if bid belongs to user AND is still 'pending'
                 // This blocks cancellation of accepted bids (auction already won)
                 String checkSql =
                     "SELECT b.id, b.item_id FROM bids b " +
@@ -53,7 +53,7 @@ public class CancelBidServlet extends HttpServlet {
                     deletePs.setInt(1, bidId);
                     deletePs.executeUpdate();
 
-                    // BUG FIX 6: Recalculate current_bid from remaining bids after cancellation
+                    // Recalculate current_bid from remaining bids after cancellation
                     // If no bids remain, reset to starting_price
                     String recalcSql =
                         "UPDATE items SET current_bid = COALESCE(" +

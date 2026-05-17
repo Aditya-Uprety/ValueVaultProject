@@ -98,7 +98,6 @@
 
     <div class="about-container" style="max-width:900px;">
 
-        <%-- Hero --%>
         <div style="text-align:center;margin-bottom:36px;">
             <img src="${pageContext.request.contextPath}/images/logo.png"
                  alt="ValueVault" style="height:72px;width:auto;margin-bottom:14px;opacity:.9;">
@@ -157,12 +156,12 @@
         <div class="about-section">
             <h2>Bidding Rules &amp; Guidelines</h2>
             <ul class="values-list">
-                <li><span class="icon">📌</span>Each bid must be strictly higher than the current highest bid for that item.</li>
-                <li><span class="icon">📌</span>You may update your existing pending bid on an item by placing a new higher amount — your previous bid will be replaced.</li>
-                <li><span class="icon">📌</span>You can cancel a pending bid on an active auction at any time from the "My Bids" page, as long as the bid has not yet been accepted.</li>
-                <li><span class="icon">📌</span>Once a bid is accepted by the admin, it cannot be cancelled. The auction closes and all other bids are automatically rejected.</li>
-                <li><span class="icon">📌</span>Administrators do not participate in bidding. Admin accounts are restricted from accessing the shop or placing bids.</li>
-                <li><span class="icon">📌</span>All bids and transactions are logged securely for full transparency.</li>
+                <li><span class="icon" style="color:var(--gold-dim);font-size:12px;">—</span>Each bid must be strictly higher than the current highest bid for that item.</li>
+                <li><span class="icon" style="color:var(--gold-dim);font-size:12px;">—</span>You may update your existing pending bid on an item by placing a new higher amount — your previous bid will be replaced.</li>
+                <li><span class="icon" style="color:var(--gold-dim);font-size:12px;">—</span>You can cancel a pending bid on an active auction at any time from the "My Bids" page, as long as the bid has not yet been accepted.</li>
+                <li><span class="icon" style="color:var(--gold-dim);font-size:12px;">—</span>Once a bid is accepted by the admin, it cannot be cancelled. The auction closes and all other bids are automatically rejected.</li>
+                <li><span class="icon" style="color:var(--gold-dim);font-size:12px;">—</span>Administrators do not participate in bidding. Admin accounts are restricted from accessing the shop or placing bids.</li>
+                <li><span class="icon" style="color:var(--gold-dim);font-size:12px;">—</span>All bids and transactions are logged securely for full transparency.</li>
             </ul>
         </div>
 
@@ -170,17 +169,17 @@
         <div class="about-section">
             <h2>Our Values</h2>
             <ul class="values-list">
-                <li><span class="icon">🔒</span><div><strong style="color:var(--text-white);">Security First</strong> — All passwords are stored using SHA-256 hashing. Sessions are strictly managed and role-based access control ensures that only authorised users reach the right parts of the platform.</div></li>
-                <li><span class="icon">🔍</span><div><strong style="color:var(--text-white);">Transparency</strong> — Every bid is visible to the admin, and bidders can see current highest bids in real time. There are no hidden fees or surprise outcomes.</div></li>
-                <li><span class="icon">⚡</span><div><strong style="color:var(--text-white);">Fairness</strong> — When a winning bid is accepted, all competing bids are automatically and immediately rejected. No bid can be accepted twice on the same item.</div></li>
-                <li><span class="icon">🤝</span><div><strong style="color:var(--text-white);">Trust</strong> — We only list verified, genuine assets. Our admin team personally reviews every listing before it goes live in the auction pool.</div></li>
+                <li><span class="icon" style="color:var(--gold-dim);font-size:12px;">—</span><div><strong style="color:var(--text-white);">Security First</strong> — All passwords are stored using SHA-256 hashing. Sessions are strictly managed and role-based access control ensures that only authorised users reach the right parts of the platform.</div></li>
+                <li><span class="icon" style="color:var(--gold-dim);font-size:12px;">—</span><div><strong style="color:var(--text-white);">Transparency</strong> — Every bid is visible to the admin, and bidders can see current highest bids in real time. There are no hidden fees or surprise outcomes.</div></li>
+                <li><span class="icon" style="color:var(--gold-dim);font-size:12px;">—</span><div><strong style="color:var(--text-white);">Fairness</strong> — When a winning bid is accepted, all competing bids are automatically and immediately rejected. No bid can be accepted twice on the same item.</div></li>
+                <li><span class="icon" style="color:var(--gold-dim);font-size:12px;">—</span><div><strong style="color:var(--text-white);">Trust</strong> — We only list verified, genuine assets. Our admin team personally reviews every listing before it goes live in the auction pool.</div></li>
             </ul>
         </div>
 
         <%-- Contact CTA --%>
         <div style="text-align:center;padding:28px 20px;background:var(--bg-mid);border:1px solid var(--border);border-radius:var(--radius-md);">
             <p style="color:var(--text-mid);font-size:15px;margin-bottom:14px;">Have a question or want to list a high-value asset? Get in touch with our team.</p>
-            <a href="${pageContext.request.contextPath}/contact" class="btn-primary" style="width:auto;padding:10px 28px;display:inline-flex;">Contact Us →</a>
+            <a href="${pageContext.request.contextPath}/contact" class="btn-primary" style="width:auto;padding:10px 28px;display:inline-flex;">Contact Us</a>
         </div>
 
     </div>

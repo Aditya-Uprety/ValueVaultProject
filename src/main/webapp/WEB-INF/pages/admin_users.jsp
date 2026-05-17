@@ -103,7 +103,7 @@
     <!-- Delete User Confirmation Modal -->
     <div class="modal-overlay" id="deleteUserModal">
         <div class="modal-box">
-            <div class="modal-icon">⚠️</div>
+            <div class="modal-icon" style="font-size:28px;color:var(--red);font-weight:300;letter-spacing:-1px;">&#x26A0;</div>
             <h3>Delete User Account</h3>
             <p>You are about to permanently delete <strong id="modalUserName"></strong>'s account.<br>
                All their bids will also be removed. This action cannot be undone.</p>
@@ -166,7 +166,7 @@
                                 <!-- Styled modal trigger instead of plain confirm() -->
                                 <button class="btn-delete"
                                         onclick="openDeleteModal(<%= user.get("id") %>, '<%= ((String)user.get("name")).replace("'", "\\'") %>')">
-                                    🗑 Delete
+                                    Delete
                                 </button>
                             </td>
                         </tr>

@@ -25,7 +25,9 @@
 
     <div class="login-container">
         <div class="login-card">
-            <div class="login-icon">🔒</div>
+           <div class="login-icon">
+    			<img src="${pageContext.request.contextPath}/images/logo.png" alt="ValueVault" style="height:64px;width:auto;">
+		   </div>
             <h1>Welcome Back</h1>
             <p class="subtitle">Secure access to your ValueVault account.</p>
 
@@ -39,10 +41,19 @@
                 <div class="error-msg"><%= request.getAttribute("error") %></div>
             <% } %>
 
+            <%
+                // Preserve the submitted email so the user doesn't have to retype it after a failure
+                String emailValue = request.getAttribute("emailValue") != null
+                    ? (String) request.getAttribute("emailValue") : "";
+            %>
+
             <form action="${pageContext.request.contextPath}/login" method="post">
                 <div class="form-group">
                     <label>Email Address</label>
-                    <input type="email" name="email" placeholder="name@example.com" required autofocus>
+                    <input type="email" name="email"
+                           placeholder="name@example.com"
+                           value="<%= emailValue %>"
+                           required autofocus>
                 </div>
                 <div class="form-group">
                     <label>Password</label>
@@ -54,7 +65,7 @@
                     <a href="${pageContext.request.contextPath}/forgot-password" class="forgot-password">Forgot Password?</a>
                 </div>
 
-                <button type="submit" class="btn-primary">Login →</button>
+                <button type="submit" class="btn-primary">Login</button>
             </form>
             <p class="footer-text">Don't have an account? <a href="${pageContext.request.contextPath}/register">Join ValueVault</a></p>
         </div>

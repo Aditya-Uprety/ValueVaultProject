@@ -62,7 +62,7 @@ public class ItemDAO {
             ps.setString(2, item.getDescription());
             ps.setDouble(3, item.getStartingPrice());
             ps.setDouble(4, item.getStartingPrice()); // current_bid starts as starting_price
-            ps.setString(5, item.getImageUrl());      // may be null — that's fine
+            ps.setString(5, item.getImageUrl());      // may be null 
             return ps.executeUpdate() > 0;
         } catch (SQLException e) {
             e.printStackTrace();

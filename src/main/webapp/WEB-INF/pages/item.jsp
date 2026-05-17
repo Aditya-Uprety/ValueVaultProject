@@ -57,7 +57,7 @@
 
             <% if (auctionEnded) { %>
                 <div class="auction-ended-banner">
-                    🏁 This auction has ended. The winning bid was
+                    This auction has ended. The winning bid was
                     <strong>Rs <%= String.format("%,.0f", item.getCurrentBid()) %></strong>.
                 </div>
             <% } %>
@@ -75,7 +75,7 @@
                                  alt="<%= item.getTitle() %>"
                                  style="width:100%;height:100%;object-fit:cover;border-radius:inherit;">
                         <% } else { %>
-                            <div class="placeholder-img-large">📦</div>
+                            <div class="placeholder-img-large" style="font-size:14px;font-weight:700;color:var(--gold-dim);letter-spacing:3px;opacity:.35;">VALUEVAULT</div>
                         <% } %>
                     </div>
                 </div>
@@ -106,7 +106,7 @@
 
                     <% if (!auctionEnded) { %>
                     <!-- Bid form — only shown while auction is active -->
-                    <!-- BUG FIX 4: onsubmit confirmation popup before placing bid -->
+                    <!-- onsubmit confirmation popup before placing bid -->
                     <div class="bid-form">
                         <h3>Place a Bid</h3>
                         <form id="bidForm" action="${pageContext.request.contextPath}/item" method="post"
@@ -118,14 +118,14 @@
                                        value="<%= (long)(item.getCurrentBid() + 100) %>" required>
                                 <span class="min-bid">Min: Rs <%= String.format("%,.0f", item.getCurrentBid() + 1) %></span>
                             </div>
-                            <button type="submit" class="btn-primary">⚡ Place Bid</button>
+                            <button type="submit" class="btn-primary">Place Bid</button>
                         </form>
-                        <p class="terms-note">By placing a bid, you agree to the <a href="#">Terms &amp; Conditions</a>.</p>
+                        <p class="terms-note">By placing a bid, you agree to the <a href="#" onclick="showTerms(); return false;">Terms &amp; Conditions</a>.</p>
                     </div>
                     <% } else { %>
                     <!-- Ended state -->
                     <div class="bid-form" style="text-align:center;padding:28px 20px;">
-                        <div style="font-size:40px;margin-bottom:12px;">🏁</div>
+                        <div style="font-size:32px;color:var(--text-muted);margin-bottom:12px;font-weight:300;">&#x2715;</div>
                         <h3 style="margin-bottom:8px;">Auction Closed</h3>
                         <p style="color:var(--text-muted);font-size:14px;">Bidding for this item has ended.</p>
                         <a href="${pageContext.request.contextPath}/shop"
@@ -148,7 +148,7 @@
     </div>
 
     <script>
-        // BUG FIX 4: Confirmation popup showing bid amount before submitting
+        // Confirmation popup showing bid amount before submitting
         function confirmBid() {
             var amount = document.getElementById('bidAmount').value;
             if (!amount) return false;
@@ -156,6 +156,19 @@
             return confirm(
                 'Confirm your bid of ' + formatted + '?\n\n' +
                 'Once placed, your bid cannot be cancelled if it is accepted by the admin.'
+            );
+        }
+    	
+        function showTerms() {
+            alert(
+                "Terms & Conditions\n\n" +
+                "By placing a bid on ValueVault, you agree to the following:\n\n" +
+                "1. All bids are binding once accepted by the admin.\n" +
+                "2. Bids cannot be cancelled after acceptance.\n" +
+                "3. The highest accepted bid wins the auction.\n" +
+                "4. Payment must be completed within 3 business days of winning.\n" +
+                "5. ValueVault reserves the right to cancel any auction at any time.\n\n" +
+                "A copy of the full Terms & Conditions has been sent to your registered email address."
             );
         }
     </script>

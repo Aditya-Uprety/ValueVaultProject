@@ -66,7 +66,7 @@
                                         <img src="${pageContext.request.contextPath}/images/<%= bid.get("image_url") %>"
                                              alt="">
                                     <% } else { %>
-                                        <span>💎</span>
+                                        <span style="font-size:10px;font-weight:700;color:var(--gold-dim);letter-spacing:1px;opacity:.6;">VV</span>
                                     <% } %>
                                 </div>
                                 <div>
@@ -79,21 +79,12 @@
                             <td>Rs <%= String.format("%,.0f", bid.get("current_high_bid")) %></td>
                             <td class="highlight">Rs <%= String.format("%,.0f", bid.get("bid_amount")) %></td>
                             <td>
-                                <span class="status <%= statusClass %>">
-                                    <% if ("Winning".equals(status) && auctionEnded) { %>🏆
-                                    <% } else if ("Winning".equals(status)) { %>🥇
-                                    <% } %>
-                                    <%= status %>
-                                </span>
+                                <span class="status <%= statusClass %>"><%= status %></span>
                             </td>
                             <td>
                                 <div style="display:flex;gap:8px;flex-wrap:wrap;">
                                     <%
-                                    // BUG FIX 1: Action buttons logic
-                                    // - Winning on ACTIVE auction: View + Cancel allowed
-                                    // - Winning on ENDED auction (accepted): View only — NO cancel
-                                    // - Outbid: Bid Again + Cancel allowed
-                                    // - Lost: Details only
+                                    // Action buttons logic
                                     if ("Winning".equals(status) && !auctionEnded) {
                                     %>
                                         <a href="${pageContext.request.contextPath}/item?id=<%= bid.get("item_id") %>"
@@ -107,7 +98,7 @@
                                         <%-- Auction ended and this user won — show details only, NO cancel --%>
                                         <a href="${pageContext.request.contextPath}/item?id=<%= bid.get("item_id") %>"
                                            class="btn-secondary" style="padding:6px 14px;font-size:13px;">View</a>
-                                        <span style="font-size:12px;color:var(--green);align-self:center;">🏆 Won</span>
+                                        <span style="font-size:12px;color:var(--green);align-self:center;font-weight:600;">Won</span>
                                     <% } else if ("Outbid".equals(status)) { %>
                                         <a href="${pageContext.request.contextPath}/item?id=<%= bid.get("item_id") %>"
                                            class="btn-primary small">Bid Again</a>
